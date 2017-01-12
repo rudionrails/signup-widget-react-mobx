@@ -1,0 +1,70 @@
+/**
+ * Registration Widget Theme
+ */
+
+@import '~bootstrap/scss/mixins'; // box-shadow, etc
+@import '~bootstrap/scss/custom'; // custom joblocal variables
+@import '~bootstrap/scss/variables'; // default/fallback bootstrap variables
+
+$jsw-container-background:  #f1f1ef;
+
+body {
+  font-weight: 300;
+}
+
+.card {
+  @include box-shadow(0 0 55px 0 rgba(0,0,0,0.2));
+}
+
+.jsw-container {
+  background: $jsw-container-background;
+
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  transition: transform 0.3s ease;
+  transform: translate(0, -100%);
+
+  border-bottom: 5px solid $brand-warning;
+}
+
+.jsw-container--appear {
+  transform: translate(0, 0);
+}
+
+.jsw-header {
+  .jsw-header__btn-close {
+    font-size: $font-size-h3;
+    color: $text-muted;
+
+    background: transparent;
+    border: 0 none;
+  }
+}
+
+.jsw-error {
+  .jsw-error__icon {
+    border-top-color: $brand-danger;
+    border-bottom-color: $brand-danger;
+    border-left-color: $brand-danger;
+  }
+
+  .jsw-error__input {
+    border-top-color: $brand-danger;
+    border-right-color: $brand-danger;
+    border-bottom-color: $brand-danger;
+  }
+
+  .jsw-error__message {
+    display: block;
+    color: $brand-danger;
+  }
+}
+
+.jsw-success__icon {
+  font-size: 3rem;
+}
