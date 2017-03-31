@@ -6,12 +6,13 @@ pipeline {
   stages {
     stage('Analysis') {
       steps {
-        echo 'Building..'
+        sh 'yarn lint'
       }
     }
+
     stage('Test') {
       steps {
-        echo 'Testing..'
+        sh 'yarn test'
       }
     }
   }
