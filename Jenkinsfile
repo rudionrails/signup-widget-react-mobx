@@ -1,6 +1,8 @@
 pipeline {
   agent {
-    docker 'node'
+    docker {
+      image 'baschte/nodejs-npm-yarn-image'
+    }
   }
 
   stages {
